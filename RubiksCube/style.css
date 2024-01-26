@@ -1,0 +1,394 @@
+
+  
+  #background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+
+body {
+    width: 100vw;
+    height: 10260px;
+    background: linear-gradient(180deg, rgb(39, 39, 39) 0%, rgb(20, 20, 20) 100%);
+    margin: 0px 0px 0px 0px;
+    margin: 0;
+    padding: 0;
+    
+    
+}
+#top {
+    width: 100vw;
+    top: 0;
+    left: 0;
+    overflow: none;
+    height: 75px;
+    background: #333;
+    
+}
+
+#home {
+    top: 0;
+    left: 0;
+    padding: 19px;
+    width: 41px;
+    height: 37px;
+    flex-shrink: 0;
+
+}
+
+#bars {
+    padding: 19px;
+    padding-left: 90vw;
+    width: 40px;
+    height: 37px;
+    flex-shrink: 0;
+}
+
+
+#midtext {
+    
+    text-align: center;
+    padding: 50px;
+    color: white;
+    font-family: "Dubai";
+    font-weight:    bolder ;
+    font-size: 30px;
+
+
+}
+
+#midtextdiv {
+    margin: 100px;
+    margin-left: 300px;
+    border-radius: 105px;
+    background: linear-gradient(180deg, #3F3F9F 0%, #000 100%);
+
+
+    box-shadow: 26px 26px 49.3px 8px rgba(0, 0, 0, 0.25);
+    flex-shrink: 0; 
+    animation-name: infinateupdown;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all .4s;
+}
+
+
+#title {
+
+    text-align: center;
+    padding: 50px;
+    color: white;
+    font-family: "Dubai";
+    font-weight:    bolder ;
+    font-size: 50px;
+ 
+
+}
+
+#glowystuff {
+    text-align: center;
+    font-family: Dubai;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background: linear-gradient(270deg, #F00 0%, #FF862E 47.18%, #EC0000 93.43%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+#moves {
+    width: 462.338px;
+    height: 274px;
+    flex-shrink: 0;
+    border-radius: 35px;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    animation-name: infinateupdown;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all .3s;
+}
+
+@keyframes infinateupdown {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-40px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+
+
+}
+#salib {
+    margin-top: 75px;
+    border-radius: 0px 121px 121px 0px;
+    background: #D3D3D3;
+    box-shadow: 93px 90px 41.3px 8px rgba(0, 0, 0, 0.25) inset;
+    width: 1274px;
+    height: 242px;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 50px;
+    color: rgb(20, 20, 20);
+    font-family: "Dubai";
+    font-weight:    bolder ;
+    font-size: 17px;
+
+}
+
+#wandrimg {
+    margin: 100px;
+    width: 696px;
+    height: 277px;
+    flex-shrink: 0;
+    border-radius: 136px;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    animation-name: infinateupdown;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all .3s;
+
+}
+
+
+    
+
+#whitecorner {
+    border-radius: 50px;
+    text-align: center;
+    padding: 20px;
+    background-color: #3F3F9F;
+    margin-top: 400px;
+    margin-left: 300px;
+    margin-right: 300px;
+    font-family: "dubai";
+    color: #D3D3D3;
+    animation-name: infinateupdown;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all .3s;
+
+
+}
+#whitecorner2 {
+    border-radius: 50px;
+    text-align: center;
+    padding: 20px;
+    background-color: #3f949f;
+    margin-top: 75px;
+    margin-left: 300px;
+    margin-right: 300px;
+    font-family: "dubai";
+    color: #D3D3D3;
+
+
+
+}
+
+
+#cornerimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    border-radius: 25px;
+
+
+}
+
+#midparttext {
+    padding: 50px;
+    color: white;
+    font-family: "Dubai";
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+    margin-left: 500px;
+    margin-right: 200px;
+    margin-top: 150px;
+    width: 992px;
+    height: 348px;
+    flex-shrink: 0;
+    border-radius: 40px 40px 249px 249px;
+    background: #7E1E1E;
+    box-shadow: 0px 0px 47px 88px rgba(0, 0, 0, 0.25) inset;
+}
+
+#imgwround #l {
+    border-radius: 20px;
+    width: 400px;
+    float: left;
+    margin-left: 200px;
+    margin-right: 200px;
+
+}
+#imgwround #r {
+    border-radius: 20px;
+    width:  400px;
+    float: right;
+    margin-left: 200px;
+    margin-right: 200px;
+
+
+
+}
+
+#F2L h2 {
+    margin-top: 100px;
+    font-size: 25px;
+    font-family: "Dubai";
+    font-weight: 600;
+    color: #ffffffff;
+    text-align: center;
+    
+}
+
+#F2L {
+    width: 754px;
+    height: 600px;
+    flex-shrink: 0;
+    border-radius: 46px;
+    background: linear-gradient(180deg, #00ACD1 0%, #00191F 100%);
+    box-shadow: 0px 4px 92.8px 59px rgba(0, 0, 0, 0.25) inset;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+#poopityscoop {
+    border-radius: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#poopityscoopity {
+    border-radius: 30px;
+    
+}
+
+
+#salibytxt {
+    width: 1200px;
+    height: 1063px;
+    flex-shrink: 0;
+    border-radius: 238px 0px 238px 238px;
+    background: #84b1d9;
+    box-shadow: 100px 100px 64px 0px rgba(0, 0, 0, 0.25) inset;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 75px;
+    padding: 100px;
+    font-family: "Dubai";
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    animation-name: infinateupdown;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all .3s;
+
+
+}
+#aligntheycor {
+    margin-top: 75px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 100px;
+    font-family: "Dubai";
+    text-align: center;
+    background-color: #565E8C;
+    padding: 50px;
+    animation-name: infinateupdown;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all .3s;
+
+
+
+    
+}
+#aligntheycor2 {
+    margin-top: 75px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 100px 10px 10px 10px;
+    font-family: "Dubai";
+    text-align: center;
+    background-color: #F29C6B;
+    padding: 50px;
+
+
+
+    
+}
+
+#aligntheycor3 {
+    margin-top: 75px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 100px;
+    font-family: "Dubai";
+    text-align: center;
+    background-color: #7553A6;
+    padding: 50px;
+    animation-name: infinateupdown;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all .3s;
+
+
+    
+}
+
+
+#loool {
+    border-radius: 20px;  
+}
+
+#therest {
+
+    margin-top: 75px;
+    margin-left: 400px;
+    margin-right: 50px;
+    border-radius: 100px;
+    font-family: "Dubai";
+    text-align: center;
+    background-color: #BF5454;
+    padding: 50px;
+
+
+}
+#customCursor {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    pointer-events: none;
+   }
+   #container {
+    perspective: 1000px;
+    overflow: hidden;
+   }
+   
+   
