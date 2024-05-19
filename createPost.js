@@ -13,3 +13,5 @@ async function createPost(userId, title, content) {
     console.log('Post created:', data);
   }
 }
+
+export default createPost;
