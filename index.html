@@ -1,25 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rubicks3d | دوست روبیکی شما</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'text': '#F1EFF3',
+                        'background': '#100B13',
+                        'primary': '#593173',
+                        'secondary': '#BB9FCE',
+                        'accent': '#904ABF',
+                    },
+                    fontSize: {
+                        sm: '0.750rem',
+                        base: '1rem',
+                        xl: '1.333rem',
+                        '2xl': '1.777rem',
+                        '3xl': '2.369rem',
+                        '4xl': '3.158rem',
+                        '5xl': '4.210rem',
+                    },
+                    fontFamily: {
+                        heading: 'Dubai',
+                        body: 'Dubai',
+                    },
+                    fontWeight: {
+                        normal: '400',
+                        bold: '700',
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .btn {
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-top: 1.25rem;
+            padding-bottom: 1.25rem;
+            border-radius: 3.4375rem;
+          }
+        }
+      </style>
 </head>
-<body>
+
+<body class="text-text bg-background font-bold">
     <header>
         <nav class="py-16 px-20 flex  no-underline flex justify-between items-center">
 
-                <img class="w-20" src="Vector.svg" alt="Rubicks3d logo">
+            <img class="w-20" src="Vector.svg" alt="Rubicks3d logo">
 
 
-                <a href="#">اکانت</a>
-                <a href="#">روبیک سه بعدی</a>
-                <a href="#">درباره ما</a>
-                <a href="#">بلاگ</a>
-
+            <a href="#">اکانت</a>
+            <a href="#">روبیک سه بعدی</a>
+            <a href="#">درباره ما</a>
+            <a href="#">بلاگ</a>
+        </nav>
+        <div class="hero flex">
+            <div class="animatedRubik"></div>
+            <div class="text">
+                <h1 class="text-5xl">آموزش روبیک به صورت ساده و عملی</h1>
+                <div class="btns">
+                    <button class="btn text-xl bg-primary">روبیک سه بعدی </button>
+                    <button class="btn text-xl bg-secondary">آموزش ها</button>
+                </div>
+            </div>
+        </div>
     </header>
     <script src="app.js"></script>
 </body>
+
 </html>
