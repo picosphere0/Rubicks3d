@@ -7,7 +7,7 @@
     <title>Rubicks3d | دوست روبیکی شما</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script>
         tailwind.config = {
             theme: {
@@ -54,11 +54,10 @@
       </style>
 </head>
 
-<body class="text-text bg-background font-bold">
+<body class="text-text text-right bg-background font-bold">
     <header>
         <nav class="py-16 px-20 flex  no-underline flex justify-between items-center">
 
-            <img class="w-20" src="Vector.svg" alt="Rubicks3d logo">
 
 
             <a href="#">اکانت</a>
@@ -66,10 +65,12 @@
             <a href="#">درباره ما</a>
             <a href="#">بلاگ</a>
         </nav>
-        <div class="hero flex">
-            <div class="animatedRubik"></div>
+        <div class="hero flex justify-around items-center">
+            <div class="animatedRubik">
+                <img class="w-40" src="Vector.svg" alt="Rubicks3d logo">
+            </div>
             <div class="text">
-                <h1 class="text-5xl">آموزش روبیک به صورت ساده و عملی</h1>
+                <h1 class="text-5xl">آموزش روبیک</br> به صورت ساده و عملی</h1>
                 <div class="btns">
                     <button class="btn text-xl bg-primary">روبیک سه بعدی </button>
                     <button class="btn text-xl bg-secondary">آموزش ها</button>
@@ -77,6 +78,34 @@
             </div>
         </div>
     </header>
+    <section class="blogs px-20 mt-96 ">
+        <div class="texts">
+            <h1 class="text-5xl">از تازه کار, تا حرفه ای ترین!</h1>
+        </div>
+        <div class="blogItems">
+------------------------------------------------------
+        </div>
+    </section>
+    <section class="aboutUs mt-96 flex flex-row justify-around">
+        <div class="parsa flex flex-col">
+            <div class="parsaPic">
+                <img src="" alt="عکس پارسا باطانی">
+            </div>
+            <div class="parsaText">
+                <h3 class="text-2xl">سلام من پارسا باطانی هستم</h3>
+                <h5 class="">من برنامه نویس اصلی این وب سایت هستم</h5>
+            </div>
+        </div>
+        <div class="mersad flex flex-col">
+            <div class="mersadPic">
+                <img src="" alt="عکس مرصاد رادمهر">
+            </div>
+            <div class="mersadText">
+                <h3 class="text-2xl">سلام من مرصاد رادمهر هستم</h3>
+                <h5 class="">من طراح, سرگروه و برنامه نویس دوم این وب سایت هستم</h5>
+            </div>
+        </div>
+    </section>
     <script src="app.js"></script>
 </body>
 
