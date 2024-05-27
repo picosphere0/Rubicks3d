@@ -1,0 +1,455 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&family=Vazirmatn:wght@100..900&display=swap');
+
+@layer base {
+    :root {
+      --text: #010b19;
+      --background: #f5f9ff;
+      --primary: #03367c;
+      --secondary: #7c56fb;
+      --accent: #5305d1;
+    }
+    .dark {
+      --text: #e4effe;
+      --background: #00040a;
+      --primary: #81b5fc;
+      --secondary: #2a04a8;
+      --accent: #7c2efa;
+    }
+  }
+  
+html, body {
+ font-family: "Vazirmatn"  ;
+  max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+
+.btn {
+    padding: 1.5rem;
+    border-radius: 2rem;
+}
+
+#logo {
+    visibility: hidden;
+}
+  
+/*  #background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    z-index: -1;
+  }
+  
+
+body {
+    width: auto;
+    height: auto;
+    background: linear-gradient(180deg, rgb(39, 39, 39) 0%, rgb(20, 20, 20) 100%);
+    margin: 0px 0px 0px 0px;
+    margin: 0;
+    padding: 0;
+    
+    
+}
+#top {
+    width: 100vw;
+    top: 0;
+    left: 0;
+    overflow: none;
+    height: 75px;
+    background: #333;
+    
+}
+
+
+#midtext {
+    
+    text-align: center;
+    padding: 50px;
+    color: white;
+    font-family: "Vazirmatn";
+    font-weight:    bolder ;
+    font-size: 30px;
+
+
+}
+
+#midtextdiv {
+    margin: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 105px;
+    background: linear-gradient(180deg, #3F3F9F 0%, #000 100%);
+
+
+    box-shadow: 26px 26px 49.3px 8px rgba(0, 0, 0, 0.25);
+    flex-shrink: 0; 
+    animation-name: infinateupdown;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all .4s;
+}
+
+
+#title {
+
+    text-align: center;
+    padding: 50px;
+    color: white;
+    font-family: "Vazirmatn";
+    font-weight:    bolder ;
+    font-size: 50px;
+ 
+
+}
+
+#glowystuff {
+    text-align: center;
+    font-family: Vazirmatn;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background: linear-gradient(270deg, #F00 0%, #FF862E 47.18%, #EC0000 93.43%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+#moves {
+    width: auto;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 35px;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    animation-name: infinateupdown;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all .3s;
+}
+
+@keyframes infinateupdown {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-40px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+
+
+}
+#salib {
+    margin-top: 75px;
+    border-radius: 0px 121px 121px 0px;
+    background: #D3D3D3;
+    box-shadow: 93px 90px 41.3px 8px rgba(0, 0, 0, 0.25) inset;
+    width: auto;
+    height: fit-content;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 50px;
+    color: rgb(20, 20, 20);
+    font-family: "Vazirmatn";
+    font-weight:    bolder ;
+    font-size: 17px;
+
+}
+
+#wandrimg {
+    margin: 100px;
+    width: auto;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 136px;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    animation-name: infinateupdown;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all .3s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+
+}
+
+
+    
+
+#whitecorner {
+    border-radius: 50px;
+    text-align: center;
+    padding: 20px;
+    background-color: #3F3F9F;
+    margin-top: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Vazirmatn";
+    color: #D3D3D3;
+    animation-name: infinateupdown;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all .3s;
+
+
+}
+#whitecorner2 {
+    border-radius: 50px;
+    text-align: center;
+    padding: 20px;
+    background-color: #3f949f;
+    margin-top: 75px;
+    width:  fit-content;
+margin-left: auto;
+margin-right: auto ;
+    font-family: "Vazirmatn";
+    color: #D3D3D3;
+
+
+
+}
+
+
+#cornerimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    border-radius: 25px;
+
+
+}
+
+#midparttext {
+    padding: 50px;
+    color: white;
+    font-family: "Vazirmatn";
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    width: auto;
+    height: fit-content;
+    flex-shrink: 0;
+    border-radius: 40px 40px 249px 249px;
+    background: #7E1E1E;
+    box-shadow: 0px 0px 47px 88px rgba(0, 0, 0, 0.25) inset;
+}
+
+#l {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+
+}
+
+#r {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    
+    
+    }
+
+#F2L h2 {
+    margin-top: 100px;
+    font-size: 25px;
+    font-family: "Vazirmatn";
+    font-weight: 600;
+    color: #ffffffff;
+    text-align: center;
+    
+}
+
+#F2L {
+    width: auto;
+    height: fit-content;
+    flex-shrink: 0;
+    border-radius: 46px;
+    background: linear-gradient(180deg, #00ACD1 0%, #00191F 100%);
+    box-shadow: 0px 4px 92.8px 59px rgba(0, 0, 0, 0.25) inset;
+    margin-left: auto;
+    margin-right: auto;
+}
+#poopityscoop {
+    border-radius: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+#poopityscoopity {
+    border-radius: 30px;
+    
+}
+
+
+#salibytxt {
+    width: auto;
+    height: fit-content;
+    flex-shrink: 0;
+    border-radius: 238px 0px 238px 238px;
+    background: #84b1d9;
+    box-shadow: 100px 100px 64px 0px rgba(0, 0, 0, 0.25) inset;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 400px;
+    padding: 100px;
+    font-family: "Vazirmatn";
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    animation-name: infinateupdown;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all .3s;
+
+
+}
+#aligntheycor {
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100px;
+    font-family: "Vazirmatn";
+    text-align: center;
+    background-color: #565E8C;
+    padding: 50px;
+    animation-name: infinateupdown;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all .3s;
+
+
+
+    
+}
+#aligntheycor2 {
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100px 10px 10px 10px;
+    font-family: "Vazirmatn";
+    text-align: center;
+    background-color: #F29C6B;
+    padding: 50px;
+
+
+
+    
+}
+
+#aligntheycor3 {
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100px;
+    font-family: "Vazirmatn";
+    text-align: center;
+    background-color: #7553A6;
+    padding: 50px;
+    animation-name: infinateupdown;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all .3s;
+
+
+    
+}
+
+
+#loool {
+    border-radius: 20px;  
+}
+
+#therest {
+
+    margin-top: 75px;
+    margin-right: auto ;
+    border-radius: 100px;
+    font-family: "Vazirmatn";
+    text-align: center;
+    background-color: #BF5454;
+    padding: 50px;
+
+
+}
+
+#ijustwanttoeatdinner {
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100px;
+    font-family: "Vazirmatn";
+    text-align: center;
+    background-color: #F29C6B;
+    padding: 10px;
+    margin-left: auto ;
+    margin-bottom: 100px;
+    top: 0;
+    left: 0;
+    flex: auto;
+    display: flex;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 1000px;
+    text-decoration-line: none;
+    margin: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 105px;
+    background: linear-gradient(180deg, hsl(313, 67%, 46%) 0%, hsl(314, 44%, 34%) 100%);
+
+
+    box-shadow: 26px 26px 49.3px 8px rgba(0, 0, 0, 0.25);
+    flex-shrink: 0; 
+    animation-name: infinateupdown;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all .4s;
+
+}    
+
+#aofbutton {
+
+        height: 200px;
+        position: relative;
+        
+}
+
+#blackpartathtebot {
+    width: auto;
+    height: max-content;
+    font-family: "Vazirmatn";
+    font-weight: bolder;
+    font-size: large;
+    background-color: #202020;
+    text-align: center;
+    padding: 50px;
+}
