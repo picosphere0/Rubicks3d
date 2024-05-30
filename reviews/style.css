@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&family=Vazirmatn:wght@100..900&display=swap');
+
+@layer base {
+    :root {
+      --text: #010b19;
+      --background: #f5f9ff;
+      --primary: #03367c;
+      --secondary: #7c56fb;
+      --accent: #5305d1;
+    }
+    .dark {
+      --text: #e4effe;
+      --background: #00040a;
+      --primary: #81b5fc;
+      --secondary: #2a04a8;
+      --accent: #7c2efa;
+    }
+  }
+  
+html, body {
+ font-family: "Vazirmatn"  ;
+  max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+
+.btn {
+    padding: 1.5rem;
+    border-radius: 2rem;
+}
+
+.swiper-slide {
+    width: fit-content;
+}
+

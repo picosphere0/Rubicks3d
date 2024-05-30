@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubicks3d | بلاگ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ2SVDZSY5"></script>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Authors : mersad radmehr and parsa batani
+    Rubicks3d is a website amied to help you master the art of the rub cube">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'text': 'var(--text)',
+                        'background': 'var(--background)',
+                        'primary': 'var(--primary)',
+                        'secondary': 'var(--secondary)',
+                        'accent': 'var(--accent)',
+                    },
+                    fontSize: {
+                        sm: '0.57692rem',
+                        base: '0.750rem',
+                        xl: '1rem',
+                        '2xl': '1.333rem',
+                        '3xl': '1.777rem',
+                        '4xl': '2.369rem',
+                        '5xl': '3.158rem',
+                    },
+                    fontFamily: {
+                        heading: 'Vazirmatn',
+                        body: 'Vazirmatn',
+                    },
+                    fontWeight: {
+                        normal: '400',
+                        bold: '700',
+                    },
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body class="bg-background text-text font-bold">
+    <header>
+        <nav class="flex flex-row-reverse justify-around items-center p-16">
+            <button id="theme-toggle" class="bg-gray-100 text-white font-bold py-2 px-4 rounded">
+                <img src="../img/theme.svg" alt="theme-toggle" class="w-4">
+            </button>
+            <a href="../blog/index.html">بلاگ</a>
+            <a href="../web.html">روبیک سه بعدی</a>
+            <a href="../reviews/index.html">نظرات</a>
+            <img class="w-16" src="../img/favicon.ico" alt="logo">
+        </nav>
+        <div class="content p-16">
+            <h1 class="text-5xl text-right">آموزش های مختلف برای افراد مختلف</h1>
+            <p class="text-2xl text-right">...آموزش های بیشتر به زودی</p>
+        </div>
+    </header>
+    <div id="blog-container"></div>
+    <div id="fullscreen-container" class="fixed inset-0 bg-background z-50 flex flex-col ">
+        <button class="back-button text-xl mb-4 self-start" onclick="closeFullscreen()">← Back</button>
+        <div id="fullscreen-content" class="p-16 rounded-3xl flex flex-col  items-center bg-background text-text ">
+            
+
+        </div>
+        
+        <div class="footer m-0">
+            <footer class="bg-secondary mt-32 bg-opacity-25 border-t-4 border-secondary h-64 flex flex-row-reverse justify-around items-center">
+                <div class="right flex flex-col text-center text-2xl ">
+                    <a href="../blog/index.html">بلاگ</a>
+                    <a href="../reviews/index.html">نظرات</a>
+                    <a href="../web.html">روبیک سه بعدی</a>
+                </div>
+                <div class="left">
+                    <img class="w-32" src="../img/Vector.svg" alt="logo">
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <footer
+    class="bg-secondary mt-32 bg-opacity-25 border-t-4 border-secondary h-64 flex flex-row-reverse justify-around items-center">
+    <div class="right flex flex-col text-center text-2xl ">
+        <a href="../blog/index.html">بلاگ</a>
+        <a href="../reviews/index.html">نظرات</a>
+        <a href="../web.html">روبیک سه بعدی</a>
+    </div>
+    <div class="left">
+        <img class="w-32" src="../img/Vector.svg" alt="logo">
+        
+    </div>
+</footer>
+
+    <script src="https://unpkg.com/pocketbase/dist/pocketbase.umd.js"></script>
+    <script>
+        const pb = new PocketBase('https://rubicks3d.pockethost.io/');
+
+        async function fetchBlogs() {
+            const records = await pb.collection('blogs').getFullList(200, {
+                sort: '-created'
+            });
+
+            const blogContainer = document.getElementById('blog-container');
+            records.forEach(record => {
+                const blogPost = document.createElement('div');
+                blogPost.classList.add('blog-post');
+                blogPost.onclick = () => showFullscreen(record);
+
+                if (record.image) {
+                    const image = document.createElement('img');
+                    image.src = pb.getFileUrl(record, record.image);
+                    image.classList.add('mb-8', 'rounded-3xl');
+                    blogPost.appendChild(image);
+                }
+
+                const title = document.createElement('h1');
+                title.textContent = record.title;
+                title.classList.add('text-3xl','mb-8', 'text-right');
+                blogPost.appendChild(title);
+
+                const content = document.createElement('p');
+                content.textContent = record.content;
+                content.classList.add('text-xl', 'text-right');
+                blogPost.appendChild(content);
+
+                blogContainer.appendChild(blogPost);
+            });
+        }
+
+        function showFullscreen(record) {
+            const fullscreenContainer = document.getElementById('fullscreen-container');
+            const fullscreenContent = document.getElementById('fullscreen-content');
+            fullscreenContent.innerHTML = '';
+
+            if (record.image) {
+                const image = document.createElement('img');
+                image.src = pb.getFileUrl(record, record.image);
+                image.style.maxWidth = '75%';
+                image.classList.add('mb-8', 'rounded-3xl', 'flex','justify-center');
+                fullscreenContent.appendChild(image);
+            }
+
+
+            const title = document.createElement('h2');
+            title.textContent = record.title;
+            title.classList.add('mb-8', 'text-4xl', 'text-right');
+            fullscreenContent.appendChild(title);
+
+            const content = document.createElement('p');
+            content.textContent = record.content;
+            content.classList.add('mb-8', 'text-xl', 'text-right');
+            fullscreenContent.appendChild(content);
+
+
+            fullscreenContainer.style.display = 'block';
+        }
+
+        function closeFullscreen() {
+            const fullscreenContainer = document.getElementById('fullscreen-container');
+            fullscreenContainer.style.display = 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchBlogs);
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                html.classList.add('light');
+            } else {
+                html.classList.remove('light');
+                html.classList.add('dark');
+            }
+        }
+
+        document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    </script>
+</body>
+
+</html>

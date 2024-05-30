@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&family=Vazirmatn:wght@100..900&display=swap');
+
+@layer base {
+    :root {
+      --text: #010b19;
+      --background: #f5f9ff;
+      --primary: #03367c;
+      --secondary: #7c56fb;
+      --accent: #5305d1;
+    }
+    .dark {
+      --text: #e4effe;
+      --background: #00040a;
+      --primary: #81b5fc;
+      --secondary: #2a04a8;
+      --accent: #7c2efa;
+    }
+  }
+  
+html, body {
+ font-family: "Vazirmatn";
+  max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+#blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(100% * 2 / 7), 1fr));
+    gap: 20px;
+}
+
+.blog-post {
+    border: 10px solid var(--primary);
+    padding: 10px;
+    border-radius: 2rem;
+    background-color: var(--background);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-post img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.blog-post h2 {
+    margin: 0 0 10px 0;
+}
+
+#fullscreen-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background);
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+#fullscreen-container .back-button {
+    font-size: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #blog-container {
+        grid-template-columns: 1fr;
+    }
+}
