@@ -100,74 +100,76 @@
     <script src="https://unpkg.com/pocketbase/dist/pocketbase.umd.js"></script>
     <script>
         const pb = new PocketBase('https://rubicks3d.pockethost.io/');
-
+    
         async function fetchBlogs() {
             const records = await pb.collection('blogs').getFullList(200, {
                 sort: '-created'
             });
-
+    
             const blogContainer = document.getElementById('blog-container');
             records.forEach(record => {
                 const blogPost = document.createElement('div');
                 blogPost.classList.add('blog-post');
                 blogPost.onclick = () => showFullscreen(record);
-
+    
                 if (record.image) {
                     const image = document.createElement('img');
                     image.src = pb.getFileUrl(record, record.image);
                     image.classList.add('mb-8', 'rounded-3xl');
                     blogPost.appendChild(image);
                 }
-
+    
                 const title = document.createElement('h1');
                 title.textContent = record.title;
-                title.classList.add('text-3xl','mb-8', 'text-right');
+                title.classList.add('text-3xl', 'mb-8', 'text-right');
                 blogPost.appendChild(title);
-
+    
                 const content = document.createElement('p');
                 content.textContent = record.content;
                 content.classList.add('text-xl', 'text-right');
                 blogPost.appendChild(content);
-
+    
                 blogContainer.appendChild(blogPost);
             });
         }
-
+    
         function showFullscreen(record) {
             const fullscreenContainer = document.getElementById('fullscreen-container');
             const fullscreenContent = document.getElementById('fullscreen-content');
             fullscreenContent.innerHTML = '';
-
+    
             if (record.image) {
                 const image = document.createElement('img');
                 image.src = pb.getFileUrl(record, record.image);
                 image.style.maxWidth = '75%';
-                image.classList.add('mb-8', 'rounded-3xl', 'flex','justify-center');
+                image.classList.add('mb-8', 'rounded-3xl', 'flex', 'justify-center');
                 fullscreenContent.appendChild(image);
             }
-
-
+    
             const title = document.createElement('h2');
             title.textContent = record.title;
             title.classList.add('mb-8', 'text-4xl', 'text-right');
             fullscreenContent.appendChild(title);
-
+    
             const content = document.createElement('p');
             content.textContent = record.content;
             content.classList.add('mb-8', 'text-xl', 'text-right');
             fullscreenContent.appendChild(content);
-
-
+    
             fullscreenContainer.style.display = 'block';
         }
-
+    
         function closeFullscreen() {
             const fullscreenContainer = document.getElementById('fullscreen-container');
             fullscreenContainer.style.display = 'none';
         }
-
-        document.addEventListener('DOMContentLoaded', fetchBlogs);
-
+    
+        // Call fetchBlogs immediately
+        fetchBlogs();
+    
+        // Keep the event listener for the "Back" button
+        document.getElementById('back-button').addEventListener('click', closeFullscreen);
+    
         function toggleTheme() {
             const html = document.documentElement;
             if (html.classList.contains('dark')) {
@@ -178,7 +180,7 @@
                 html.classList.add('dark');
             }
         }
-
+    
         document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
     </script>
 </body>
