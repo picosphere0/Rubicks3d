@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ2SVDZSY5"></script>
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <meta name="description" content="Authors : mersad radmehr and parsa batani
-    Rubicks3d is a website amied to help you master the art of the rub cube">
+    Rubicks3d is a website aimed to help you master the art of the rub cube">
     <script>
         tailwind.config = {
             theme: {
@@ -43,9 +42,27 @@
             }
         }
     </script>
+    <style>
+        .blog-post p {
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Limit to 2 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            position: relative;
+            max-height: 3em; /* Adjust based on line height */
+        }
 
+        .blog-post p::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1em; /* Adjust to control the fade-out effect height */
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--background)); /* Adjust color to match background */
+        }
+    </style>
 </head>
-
 <body class="bg-background text-text font-bold">
     <header>
         <nav class="flex flex-row-reverse justify-around items-center p-16">
@@ -64,80 +81,62 @@
     </header>
     <div id="blog-container"></div>
     <div id="fullscreen-container" class="fixed inset-0 bg-background z-50 flex flex-col " style="display: none;">
-        <button class="back-button text-xl mb-4 self-start" onclick="closeFullscreen()">← Back</button>
-        <div id="fullscreen-content" class="p-16 rounded-3xl flex flex-col  items-center bg-background text-text ">
-            
-
+        <button class="back-button text-xl mb-4 self-start" onclick="closeFullscreen()">← برگشت</button>
+        <div id="fullscreen-content" class="p-16 rounded-3xl flex flex-col  items-center bg-background text-text "></div>
+    </div>
+    <footer class="bg-secondary mt-32 bg-opacity-25 border-t-4 border-secondary h-64 flex flex-row-reverse justify-around items-center">
+        <div class="right flex flex-col text-center text-2xl ">
+            <a href="../blog/index.html">بلاگ</a>
+            <a href="../reviews/index.html">نظرات</a>
+            <a href="../web.html">روبیک سه بعدی</a>
         </div>
-        
-        <div class="footer m-0">
-            <footer class="bg-secondary mt-32 bg-opacity-25 border-t-4 border-secondary h-64 flex flex-row-reverse justify-around items-center">
-                <div class="right flex flex-col text-center text-2xl ">
-                    <a href="../blog/index.html">بلاگ</a>
-                    <a href="../reviews/index.html">نظرات</a>
-                    <a href="../web.html">روبیک سه بعدی</a>
-                </div>
-                <div class="left">
-                    <img class="w-32" src="../img/Vector.svg" alt="logo">
-                </div>
-            </footer>
+        <div class="left">
+            <img class="w-32" src="../img/Vector.svg" alt="logo">
         </div>
-    </div>
-
-    <footer
-    class="bg-secondary mt-32 bg-opacity-25 border-t-4 border-secondary h-64 flex flex-row-reverse justify-around items-center">
-    <div class="right flex flex-col text-center text-2xl ">
-        <a href="../blog/index.html">بلاگ</a>
-        <a href="../reviews/index.html">نظرات</a>
-        <a href="../web.html">روبیک سه بعدی</a>
-    </div>
-    <div class="left">
-        <img class="w-32" src="../img/Vector.svg" alt="logo">
-        
-    </div>
-</footer>
-
+    </footer>
     <script src="https://unpkg.com/pocketbase/dist/pocketbase.umd.js"></script>
     <script>
         const pb = new PocketBase('https://rubicks3d.pockethost.io/');
-    
+
         async function fetchBlogs() {
             const records = await pb.collection('blogs').getFullList(200, {
                 sort: '-created'
             });
-    
+
             const blogContainer = document.getElementById('blog-container');
+            blogContainer.innerHTML = ''; // Clear the container first
+
             records.forEach(record => {
                 const blogPost = document.createElement('div');
                 blogPost.classList.add('blog-post');
                 blogPost.onclick = () => showFullscreen(record);
-    
+
                 if (record.image) {
                     const image = document.createElement('img');
                     image.src = pb.getFileUrl(record, record.image);
                     image.classList.add('mb-8', 'rounded-3xl');
                     blogPost.appendChild(image);
                 }
-    
+
                 const title = document.createElement('h1');
                 title.textContent = record.title;
-                title.classList.add('text-3xl', 'mb-8', 'text-right');
+                title.classList.add('text-3xl', 'mb-4', 'text-right');
                 blogPost.appendChild(title);
-    
+
                 const content = document.createElement('p');
                 content.textContent = record.content;
                 content.classList.add('text-xl', 'text-right');
                 blogPost.appendChild(content);
-    
+
                 blogContainer.appendChild(blogPost);
             });
         }
-    
+
         function showFullscreen(record) {
             const fullscreenContainer = document.getElementById('fullscreen-container');
             const fullscreenContent = document.getElementById('fullscreen-content');
             fullscreenContent.innerHTML = '';
-    
+
             if (record.image) {
                 const image = document.createElement('img');
                 image.src = pb.getFileUrl(record, record.image);
@@ -145,31 +144,34 @@
                 image.classList.add('mb-8', 'rounded-3xl', 'flex', 'justify-center');
                 fullscreenContent.appendChild(image);
             }
-    
+
             const title = document.createElement('h2');
             title.textContent = record.title;
             title.classList.add('mb-8', 'text-4xl', 'text-right');
             fullscreenContent.appendChild(title);
-    
+
             const content = document.createElement('p');
             content.textContent = record.content;
             content.classList.add('mb-8', 'text-xl', 'text-right');
             fullscreenContent.appendChild(content);
-    
+
+            if (record.videoUrl) {
+                const videoContainer = document.createElement('div');
+                videoContainer.innerHTML = record.videoUrl; // Assuming record.videoUrl is the iframe embed code
+                videoContainer.classList.add('mt-8', 'p-4'); // Adjust padding and margin-top as needed
+                fullscreenContent.appendChild(videoContainer);
+            }
+
             fullscreenContainer.style.display = 'block';
         }
-    
+
         function closeFullscreen() {
             const fullscreenContainer = document.getElementById('fullscreen-container');
             fullscreenContainer.style.display = 'none';
         }
-    
-        // Call fetchBlogs immediately
+
         fetchBlogs();
-    
-        // Keep the event listener for the "Back" button
-        document.getElementById('back-button').addEventListener('click', closeFullscreen);
-    
+
         function toggleTheme() {
             const html = document.documentElement;
             if (html.classList.contains('dark')) {
@@ -180,9 +182,9 @@
                 html.classList.add('dark');
             }
         }
-    
+
         document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+
     </script>
 </body>
-
 </html>
