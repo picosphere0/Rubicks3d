@@ -29,7 +29,9 @@ html, body {
     overflow-x: hidden;
 }
 
-
+a {
+    color: var(--text);
+}
 
 .btn {
     padding: 1.5rem;
