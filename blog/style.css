@@ -80,3 +80,22 @@ html, body {
         grid-template-columns: 1fr;
     }
 }
+
+.blog-post p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    position: relative;
+    max-height: 3em; /* Adjust based on line height */
+}
+
+.blog-post p::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1em; /* Adjust to control the fade-out effect height */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--background)); /* Adjust color to match background */
+}
