@@ -4,40 +4,38 @@
        url('../fonts/vazirmatn-variablefont_wght-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
+
 @layer base {
-    :root {
+  :root {
       --text: #010b19;
       --background: #f5f9ff;
       --primary: #03367c;
       --secondary: #7c56fb;
       --accent: #5305d1;
-    }
-    .dark {
+  }
+  .dark {
       --text: #e4effe;
       --background: #00040a;
       --primary: #81b5fc;
       --secondary: #2a04a8;
       --accent: #7c2efa;
-    }
   }
-  
-html, body {
- font-family: "Vazirmatn"  ;
-  max-width: 100%;
-    overflow-x: hidden;
 }
 
-
+html, body {
+  font-family: 'Vazirmatn', sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 .btn {
-    padding: 1.5rem;
-    border-radius: 2rem;
+  padding: 1.5rem;
+  border-radius: 2rem;
 }
 
 .swiper-slide {
-    width: fit-content;
+  width: fit-content;
 }
 
 .swiper-container {
@@ -88,8 +86,8 @@ html, body {
   display: flex;
   flex-direction: column;
   align-content: flex-start;
-justify-content: center;
-align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .review-item:hover {
